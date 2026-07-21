@@ -1,3 +1,7 @@
+/* ==============================
+   TABLETS E TELAS MÉDIAS
+================================= */
+
 @media (max-width: 900px) {
   :root {
     --sidebar-width: 190px;
@@ -7,17 +11,20 @@
     padding: 20px 16px;
   }
 
+  .logo img {
+    width: 120px;
+  }
+
   .topbar,
   .content-section {
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
   }
 
   .hero {
     min-height: 320px;
-
-    margin-left: 20px;
     margin-right: 20px;
+    margin-left: 20px;
     padding: 42px;
   }
 
@@ -36,9 +43,14 @@
   }
 }
 
+/* ==============================
+   CELULARES
+================================= */
+
 @media (max-width: 700px) {
   html,
   body {
+    min-height: 100%;
     overflow-x: hidden;
   }
 
@@ -47,11 +59,14 @@
   }
 
   .app-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    padding-bottom: 84px;
+
     display: block;
 
-    min-height: 100vh;
-
-    padding-bottom: 76px;
+    overflow: visible;
   }
 
   .sidebar {
@@ -60,13 +75,22 @@
 
   .main-content {
     min-height: 100vh;
+    min-height: 100dvh;
+    padding-bottom: 24px;
 
     overflow: visible;
+
+    scroll-padding-top: 80px;
   }
 
   .topbar {
     height: 64px;
     padding: 0 16px;
+  }
+
+  .navigation-buttons button {
+    width: 38px;
+    height: 38px;
   }
 
   .navigation-buttons button:last-child {
@@ -83,7 +107,6 @@
 
   .hero {
     min-height: auto;
-
     margin: 16px;
     padding: 36px 24px;
 
@@ -108,8 +131,8 @@
   }
 
   .hero-actions {
-    align-items: stretch;
     flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-button {
@@ -120,11 +143,15 @@
     padding: 20px 16px;
   }
 
+  .section-header {
+    margin-bottom: 16px;
+  }
+
   .section-header h2 {
     font-size: 22px;
   }
 
-  .section-header a {
+  .section-link {
     display: none;
   }
 
@@ -146,25 +173,37 @@
 
   .quick-card h3 {
     padding: 10px;
+
     font-size: 13px;
+    line-height: 1.25;
   }
 
   .playlist-grid {
     display: flex;
-
     gap: 14px;
-
-    overflow-x: auto;
 
     padding-bottom: 10px;
 
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
     scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .playlist-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .playlist-card {
     min-width: 165px;
+    flex: 0 0 165px;
 
     scroll-snap-align: start;
+  }
+
+  .playlist-card:hover {
+    transform: none;
   }
 
   .play-button {
@@ -180,22 +219,29 @@
     right: 8px;
     bottom: 8px;
     left: 8px;
+    z-index: 200;
 
+    width: auto;
     height: 68px;
     padding: 8px 12px;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 12px;
 
-    border: none;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    box-shadow: var(--shadow-card);
   }
 
   .current-track {
     min-width: 0;
+    flex: 1;
   }
 
-  .current-track img {
+  .current-track > img {
     width: 48px;
     height: 48px;
   }
@@ -210,16 +256,27 @@
   }
 
   .player-controls {
+    min-width: auto;
+
     display: block;
+    flex-shrink: 0;
+  }
+
+  .control-buttons {
+    gap: 0;
   }
 
   .control-buttons button {
     display: none;
   }
 
-  .control-buttons button:nth-child(3) {
-    display: block;
-    font-size: 20px;
+  .control-buttons .main-play-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    font-size: 14px;
   }
 
   .progress-bar,
@@ -228,13 +285,37 @@
   }
 }
 
+/* ==============================
+   CELULARES PEQUENOS
+================================= */
+
 @media (max-width: 450px) {
+  .topbar {
+    padding: 0 12px;
+  }
+
+  .login-button {
+    padding: 9px 15px;
+
+    font-size: 13px;
+  }
+
   .hero {
+    margin: 12px;
     padding: 32px 20px;
   }
 
   .hero-label {
     font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 10.5vw, 42px);
+  }
+
+  .content-section {
+    padding-right: 12px;
+    padding-left: 12px;
   }
 
   .quick-access-grid {
@@ -243,10 +324,51 @@
 
   .playlist-card {
     min-width: 150px;
+    flex-basis: 150px;
+  }
+
+  .music-player {
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+
+    padding-right: 10px;
+    padding-left: 8px;
   }
 
   .current-track strong,
   .current-track span {
     max-width: 105px;
+  }
+}
+
+/* ==============================
+   TELAS MUITO PEQUENAS
+================================= */
+
+@media (max-width: 360px) {
+  .navigation-buttons {
+    display: none;
+  }
+
+  .topbar {
+    justify-content: flex-end;
+  }
+
+  .hero {
+    padding: 28px 18px;
+  }
+
+  .hero h1 {
+    font-size: 31px;
+  }
+
+  .hero-description {
+    line-height: 1.5;
+  }
+
+  .current-track strong,
+  .current-track span {
+    max-width: 90px;
   }
 }

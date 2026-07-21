@@ -8,7 +8,17 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Spotlight</title>
+  <meta
+    name="description"
+    content="Spotlight é uma interface responsiva de streaming de música desenvolvida com HTML e CSS."
+  >
+
+  <meta
+    name="theme-color"
+    content="#0d0d0f"
+  >
+
+  <title>Spotlight — Música para todos os momentos</title>
 
   <link
     rel="preconnect"
@@ -40,19 +50,37 @@
     rel="stylesheet"
     href="./css/responsive.css"
   >
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="./assets/images/favicon.png"
+  >
 </head>
 
 <body>
-  <div class="app-container">
+  <a
+    class="skip-link"
+    href="#conteudo-principal"
+  >
+    Ir para o conteúdo principal
+  </a>
 
+  <div
+    class="app-container"
+    id="inicio"
+  >
     <aside class="sidebar">
-
       <div class="logo">
-        <img
-          src="./assets/images/logo.png"
-          alt="Logotipo Spotlight"
+        <a
+          href="#inicio"
+          aria-label="Voltar ao início do Spotlight"
         >
+          <img
+            src="./assets/images/logo.png"
+            alt="Spotlight"
+          >
+        </a>
       </div>
 
       <nav
@@ -61,7 +89,10 @@
       >
         <ul>
           <li>
-            <a href="#">
+            <a
+              href="#inicio"
+              aria-current="page"
+            >
               <img
                 src="./assets/icons/home.svg"
                 alt=""
@@ -73,7 +104,11 @@
           </li>
 
           <li>
-            <a href="#">
+            <button
+              type="button"
+              aria-disabled="true"
+              title="Busca disponível em uma futura versão"
+            >
               <img
                 src="./assets/icons/search.svg"
                 alt=""
@@ -81,11 +116,15 @@
               >
 
               <span>Buscar</span>
-            </a>
+            </button>
           </li>
 
           <li>
-            <a href="#">
+            <button
+              type="button"
+              aria-disabled="true"
+              title="Biblioteca disponível em uma futura versão"
+            >
               <img
                 src="./assets/icons/library.svg"
                 alt=""
@@ -93,14 +132,20 @@
               >
 
               <span>Sua Biblioteca</span>
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
 
-      <div class="library-actions">
-
-        <button type="button">
+      <div
+        class="library-actions"
+        aria-label="Ações da biblioteca"
+      >
+        <button
+          type="button"
+          aria-disabled="true"
+          title="Criação de playlists disponível em uma futura versão"
+        >
           <img
             src="./assets/icons/plus.svg"
             alt=""
@@ -110,7 +155,11 @@
           <span>Criar playlist</span>
         </button>
 
-        <button type="button">
+        <button
+          type="button"
+          aria-disabled="true"
+          title="Músicas curtidas disponíveis em uma futura versão"
+        >
           <img
             src="./assets/icons/heart.svg"
             alt=""
@@ -119,34 +168,60 @@
 
           <span>Músicas curtidas</span>
         </button>
-
       </div>
 
-      <div class="sidebar-links">
-        <a href="#">Legal</a>
-        <a href="#">Privacidade</a>
-        <a href="#">Cookies</a>
-      </div>
+      <div
+        class="sidebar-links"
+        aria-label="Links institucionais"
+      >
+        <button
+          type="button"
+          aria-disabled="true"
+        >
+          Legal
+        </button>
 
+        <button
+          type="button"
+          aria-disabled="true"
+        >
+          Privacidade
+        </button>
+
+        <button
+          type="button"
+          aria-disabled="true"
+        >
+          Cookies
+        </button>
+      </div>
     </aside>
 
-    <main class="main-content">
-
+    <main
+      class="main-content"
+      id="conteudo-principal"
+    >
       <header class="topbar">
-
-        <div class="navigation-buttons">
+        <div
+          class="navigation-buttons"
+          aria-label="Histórico de navegação"
+        >
           <button
             type="button"
             aria-label="Voltar"
+            aria-disabled="true"
+            title="Navegação disponível em uma futura versão"
           >
-            ←
+            <span aria-hidden="true">←</span>
           </button>
 
           <button
             type="button"
             aria-label="Avançar"
+            aria-disabled="true"
+            title="Navegação disponível em uma futura versão"
           >
-            →
+            <span aria-hidden="true">→</span>
           </button>
         </div>
 
@@ -154,6 +229,8 @@
           <button
             class="signup-button"
             type="button"
+            aria-disabled="true"
+            title="Cadastro disponível em uma futura versão"
           >
             Inscrever-se
           </button>
@@ -161,11 +238,12 @@
           <button
             class="login-button"
             type="button"
+            aria-disabled="true"
+            title="Login disponível em uma futura versão"
           >
             Entrar
           </button>
         </div>
-
       </header>
 
       <section
@@ -173,7 +251,6 @@
         aria-labelledby="hero-title"
       >
         <div class="hero-content">
-
           <span class="hero-label">
             Sua música. Seu momento.
           </span>
@@ -188,7 +265,6 @@
           </p>
 
           <div class="hero-actions">
-
             <a
               class="hero-button hero-button-primary"
               href="#playlists"
@@ -202,9 +278,7 @@
             >
               Ver destaques
             </a>
-
           </div>
-
         </div>
       </section>
 
@@ -213,19 +287,20 @@
         id="destaques"
         aria-labelledby="highlights-title"
       >
-
         <div class="section-header">
           <h2 id="highlights-title">
-            ✨ Em destaque
+            <span aria-hidden="true">✨</span>
+            Em destaque
           </h2>
         </div>
 
         <div class="quick-access-grid">
-
           <article class="quick-card">
             <img
               src="./assets/images/liked-songs.png"
-              alt="Capa de músicas curtidas"
+              alt="Capa da coleção Músicas Curtidas"
+              loading="lazy"
+              decoding="async"
             >
 
             <h3>Músicas Curtidas</h3>
@@ -235,6 +310,8 @@
             <img
               src="./assets/images/rock.png"
               alt="Capa da playlist Rock"
+              loading="lazy"
+              decoding="async"
             >
 
             <h3>Rock</h3>
@@ -244,6 +321,8 @@
             <img
               src="./assets/images/metal.png"
               alt="Capa da playlist Metal"
+              loading="lazy"
+              decoding="async"
             >
 
             <h3>Metal</h3>
@@ -253,13 +332,13 @@
             <img
               src="./assets/images/chill.png"
               alt="Capa da playlist Relax"
+              loading="lazy"
+              decoding="async"
             >
 
             <h3>Relax</h3>
           </article>
-
         </div>
-
       </section>
 
       <section
@@ -267,31 +346,35 @@
         id="playlists"
         aria-labelledby="playlists-title"
       >
-
         <div class="section-header">
           <h2 id="playlists-title">
             Feito para você
           </h2>
 
-          <a href="#">
+          <span
+            class="section-link"
+            aria-hidden="true"
+          >
             Mostrar tudo
-          </a>
+          </span>
         </div>
 
         <div class="playlist-grid">
-
           <article class="playlist-card">
-
             <div class="playlist-image">
               <img
                 src="./assets/images/daily-mix-1.png"
-                alt="Capa Daily Mix 1"
+                alt="Capa da playlist Daily Mix 1"
+                loading="lazy"
+                decoding="async"
               >
 
               <button
                 type="button"
                 class="play-button"
                 aria-label="Reproduzir Daily Mix 1"
+                aria-disabled="true"
+                title="Reprodução disponível em uma futura versão"
               >
                 <img
                   src="./assets/icons/play.svg"
@@ -306,21 +389,23 @@
             <p>
               Suas músicas favoritas e novas recomendações.
             </p>
-
           </article>
 
           <article class="playlist-card">
-
             <div class="playlist-image">
               <img
                 src="./assets/images/daily-mix-2.png"
-                alt="Capa Daily Mix 2"
+                alt="Capa da playlist Daily Mix 2"
+                loading="lazy"
+                decoding="async"
               >
 
               <button
                 type="button"
                 class="play-button"
                 aria-label="Reproduzir Daily Mix 2"
+                aria-disabled="true"
+                title="Reprodução disponível em uma futura versão"
               >
                 <img
                   src="./assets/icons/play.svg"
@@ -335,21 +420,23 @@
             <p>
               Rock, metal e artistas relacionados.
             </p>
-
           </article>
 
           <article class="playlist-card">
-
             <div class="playlist-image">
               <img
                 src="./assets/images/discover-weekly.png"
-                alt="Capa Descobertas da Semana"
+                alt="Capa da playlist Descobertas da Semana"
+                loading="lazy"
+                decoding="async"
               >
 
               <button
                 type="button"
                 class="play-button"
                 aria-label="Reproduzir Descobertas da Semana"
+                aria-disabled="true"
+                title="Reprodução disponível em uma futura versão"
               >
                 <img
                   src="./assets/icons/play.svg"
@@ -364,21 +451,23 @@
             <p>
               Novas músicas escolhidas especialmente para você.
             </p>
-
           </article>
 
           <article class="playlist-card">
-
             <div class="playlist-image">
               <img
-  src="./assets/images/radar-novidades.png"
-  alt="Capa Radar de Novidades"
->
+                src="./assets/images/radar-novidades.png"
+                alt="Capa da playlist Radar de Novidades"
+                loading="lazy"
+                decoding="async"
+              >
 
               <button
                 type="button"
                 class="play-button"
                 aria-label="Reproduzir Radar de Novidades"
+                aria-disabled="true"
+                title="Reprodução disponível em uma futura versão"
               >
                 <img
                   src="./assets/icons/play.svg"
@@ -393,72 +482,81 @@
             <p>
               Os lançamentos mais recentes dos seus artistas.
             </p>
-
           </article>
-
         </div>
-
       </section>
-
     </main>
 
-    <footer class="music-player">
-
+    <footer
+      class="music-player"
+      aria-label="Player de música"
+    >
       <div class="current-track">
-
         <img
           src="./assets/images/current-song.png"
-          alt="Capa da música atual"
+          alt="Capa da música Midnight Echoes"
+          decoding="async"
         >
 
         <div>
-          <strong>Nome da música</strong>
-          <span>Nome do artista</span>
+          <strong>Midnight Echoes</strong>
+          <span>Aurora Lights</span>
         </div>
-
       </div>
 
       <div class="player-controls">
-
-        <div class="control-buttons">
+        <div
+          class="control-buttons"
+          aria-label="Controles de reprodução"
+        >
           <button
             type="button"
             aria-label="Ativar modo aleatório"
+            aria-disabled="true"
+            title="Controle disponível em uma futura versão"
           >
-            ⇄
+            <span aria-hidden="true">⇄</span>
           </button>
 
           <button
             type="button"
             aria-label="Voltar para a música anterior"
+            aria-disabled="true"
+            title="Controle disponível em uma futura versão"
           >
-            ⏮
+            <span aria-hidden="true">⏮</span>
           </button>
 
           <button
             type="button"
+            class="main-play-button"
             aria-label="Reproduzir música"
+            aria-disabled="true"
+            title="Controle disponível em uma futura versão"
           >
-            ▶
+            <span aria-hidden="true">▶</span>
           </button>
 
           <button
             type="button"
             aria-label="Avançar para a próxima música"
+            aria-disabled="true"
+            title="Controle disponível em uma futura versão"
           >
-            ⏭
+            <span aria-hidden="true">⏭</span>
           </button>
 
           <button
             type="button"
             aria-label="Ativar repetição"
+            aria-disabled="true"
+            title="Controle disponível em uma futura versão"
           >
-            ↻
+            <span aria-hidden="true">↻</span>
           </button>
         </div>
 
         <div class="progress-bar">
-
           <span>1:24</span>
 
           <input
@@ -467,19 +565,19 @@
             max="100"
             value="35"
             aria-label="Progresso da música"
+            disabled
           >
 
           <span>3:42</span>
-
         </div>
-
       </div>
 
       <div class="volume-controls">
-
-        <span aria-hidden="true">
-          🔊
-        </span>
+        <img
+          src="./assets/icons/volume.svg"
+          alt=""
+          aria-hidden="true"
+        >
 
         <input
           type="range"
@@ -487,12 +585,10 @@
           max="100"
           value="70"
           aria-label="Volume"
+          disabled
         >
-
       </div>
-
     </footer>
-
   </div>
 </body>
 </html>
